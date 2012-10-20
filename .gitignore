@@ -1,0 +1,10 @@
+
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~
+
+# Mac crap
+.DS_Store
