@@ -17,7 +17,7 @@
     define('MTimeDefaultFPS',23.9);
   define('MTimeDefaultFPSf', 1/MTimeDefaultFPS);
   if(!defined('MTimeEqPrecision'))
-  define('MTimeEqPrecision',1.2);
+  define('MTimeEqPrecision',0.9); //sec
     
   class MTime /* throws MTimeException */{
     /**
@@ -82,7 +82,7 @@
     }
     public static function toAss($t,$d='.'){
       list($foo,$tm) = explode('.',$t);
-      return date($d=='.'?'G:i:s':'H:i:s',intval($t))
+      return date($d=='.'?'G:i:s':'H:i:s',floor($t))
                         .$d.($d=='.'?substr($tm.'0000',0,2):substr($tm.'0000',0,3));
     }
     //==========================================================================
@@ -98,7 +98,7 @@
     }
     
     /**
-      * Collate times witch precision.
+      * Comparison with the reference time accuracy.
       * The comparison function return an integer less than, equal to, 
       * or greater than zero if the first argument is considered to be
       * respectively less than, equal (witch precision) to, or greater 
