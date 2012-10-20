@@ -1,0 +1,19 @@
+First fix include path
+
+
+### test.php
+Get styles form $a, text from $b and comments japanese karaoke + time shift.
+
+
+### test2.php
+Connect 2 files to find missing translation.
+
+
+
+### test3.php
+Shift time by -26.69 from 0:01:36.05 min movie.
+
+
+### test4.php
+Get sorted subtitles
+
