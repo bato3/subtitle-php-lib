@@ -25,17 +25,12 @@
       return str_replace('|',' \N ',$t);
     }
     public static function toTmp($t){
+      $t = preg_replace('/\{[^\}]*\}/','',$t);
       $rx = Array(
-          '/\{[^\}]*\}/',
-          '/\\N/',
-          '/\\n/'
+          '\N'=>'|',
+          '\n'=>'|'
         );
-      $tx = Array(
-          '',
-          '|',
-          '|'
-        );
-      return preg_replace($rx,$tx,$t);
+      return strtr($t, $rx);
     }
     /**
       * ASS/SSA

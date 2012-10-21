@@ -55,7 +55,7 @@
       return strtotime(MTimeBaseDate.' '
                        .trim(preg_replace("/[^\d:]/",'',$v),':'));
     }
-    public static function tpTmp($t){
+    public static function toTmp($t){
       return date('G:i:s', round($t));
     }
     //==========================================================================

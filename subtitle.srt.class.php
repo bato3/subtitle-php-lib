@@ -67,7 +67,7 @@ class SrtSubtitle extends Subtitle{
   }
   //==========================================================================
   private function __parseTimeLine($l){
-    preg_match('/^(\d?\d:\d\d:\d\d,\d\d\d?) *--> *(\d?\d:\d\d:\d\d,\d\d\d?) *(.*)$/', $l, $o);
+    preg_match('/^(\d+:\d+:\d+,\d+) *\-+> *(\d+:\d+:\d+,\d+) *(.*)$/', $l, $o);
     return Array('start' => MTime::fromSrt($o[1]), 
                  'end'   => MTime::fromSrt($o[2]),
                  'pos'   => $o[3]

@@ -55,7 +55,7 @@ class AssSubtitle extends Subtitle{
   /**
     * @param: bool $verbose - dodaj linie z oryginalnym tlumaczeniem 
     * jako koment oraz informacje, o braku odpowiadajacego wpisu w 2 subie
-    * {lack} i porawy czasu koĹcowego/stylu {endtime} 
+    * {lack} i porawy czasu końcowego/stylu {endtime} 
     */
   public function get($verbose = true){
     $out = Array($this->head);
@@ -74,7 +74,7 @@ class AssSubtitle extends Subtitle{
       
       $out[] = 'Dialogue: '.$this->_formatLine($l);
       
-      if($verbose && $lt !== false){
+      if($verbose && $lt != FALSE){
         if(is_array($lt)) {
           $out[] = 'Comment: '.$this->_formatLine($lt);
         } else {
@@ -116,12 +116,7 @@ class AssSubtitle extends Subtitle{
         $l['effect'] = '';
       
       // line isn't real ass/ssa
-      if(empty($l['style'])){/*
-        $r = $this->defaultRow;
-        $r['start'] = $l['start'];
-        $r['end']   = $l['end'];
-        $r['text']  = $l['text'];
-        $l = $r;*/
+      if(empty($l['style'])){
         $l = $this->mixRow($l);
       }
       
